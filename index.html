@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Kumar's World</title>
+
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f6fc;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #3498db;
+            margin-top: 30px;
+            animation: bounce 2s infinite;
+        }
+
+        .container {
+            margin: 30px auto;
+            width: 80%;
+        }
+
+        .about-child {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .about-child h2 {
+            font-size: 2.5em;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+        .about-child p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .highlight {
+            color: #ff6f61;
+            font-weight: bold;
+            background-color: #ffeb3b;
+            padding: 2px 4px;
+        }
+
+        .dream-section {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .dream-section h2 {
+            font-size: 2.5em;
+            color: #3498db;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .dream-section p {
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+
+        /* Image styling and animation */
+        .photo img {
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            animation: rotatePhoto 10s infinite;
+        }
+
+        /* Animations */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rotatePhoto {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Ankit Kumar's World!</h1>
+
+    <div class="container">
+        <!-- About Ankit -->
+        <div class="about-child">
+            <h2>About Ankit</h2>
+            <p>Meet <span class="highlight">Ankit Kumar</span>, a 6th-grade student who dreams of becoming a <strong>scientist</strong> and making groundbreaking contributions to India. He lives with his father <span class="highlight">Rajiv Thakur</span>, mother <span class="highlight">Sanju Devi</span>, and sister <span class="highlight">Aashu Kumari</span>. Ankit is extremely passionate about <strong>math and science</strong>, excelling in both subjects. He enjoys <strong>inventing</strong> new things by using old items creatively. His love for innovation keeps him exploring new ideas every day.</p>
+        </div>
+
+        <!-- Hobbies Section -->
+        <div class="about-child">
+            <h2>Ankit's Hobbies</h2>
+            <p>Ankit is an energetic kid who loves spending time outdoors. His favorite games include <span class="highlight">Kancha</span>, <span class="highlight">Guli Danda</span>, and other traditional outdoor games. He also enjoys watching cartoons in his free time, which inspire him to think creatively. His Instagram profile often reflects his love for science and invention.</p>
+        </div>
+
+        <!-- Dream Section -->
+        <div class="dream-section">
+            <h2>Ankit's Dream</h2>
+            <p>Ankit has big dreams! He wants to become a <strong>scientist</strong> to help the world with amazing discoveries. One day, he hopes to open a business that will become <strong>the most important company in India</strong>, helping solve the country’s challenges through research and technology. His ambition is to bring positive change to society.</p>
+        </div>
+
+        <!-- Image Section with Animation -->
+        <div class="photo">
+            <img src="ankit.jpg" alt="Ankit Kumar's Photo" width="200" height="200">
+        </div>
+
+        <!-- Family Details -->
+        <div class="about-child">
+            <h2>Family</h2>
+            <p>Ankit comes from a loving family. His father <span class="highlight">Rajiv Thakur</span> and mother <span class="highlight">Sanju Devi</span> have always encouraged him to follow his dreams. His sister, <span class="highlight">Aashu Kumari</span>, is his closest companion. Together, they form a strong support system for his aspirations.</p>
+        </div>
+    </div>
+
+    <!-- Add JavaScript Animation for AI Style -->
+    <script>
+        // Neural Network-like Animation for AI
+        const canvas = document.createElement('canvas');
+        document.body.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray = [];
+        const numberOfParticles = 50;
+
+        // Particle Class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = 3;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Bounce from edges
+                if (this.x < 0 || this.x > canvas.width) {
+                    this.speedX *= -1;
+                }
+                if (this.y < 0 || this.y > canvas.height) {
+                    this.speedY *= -1;
+                }
+            }
+            draw() {
+                ctx.fillStyle = '#3498db';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Initialize Particles
+        function init() {
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        // Animate Particles
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            connect();
+            requestAnimationFrame(animate);
+        }
+
+        // Connect Particles with Lines
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x;
+                    let dy = particlesArray[a].y - particlesArray[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 150) {
+                        opacityValue = 1 - (distance / 150);
+                        ctx.strokeStyle = 'rgba(52, 152, 219,' + opacityValue + ')';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
