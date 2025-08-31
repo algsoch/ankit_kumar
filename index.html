@@ -8,240 +8,187 @@
     <!-- FontAwesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f2f6fc;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3em;
-            color: #3498db;
-            margin-top: 30px;
-            animation: bounce 2s infinite;
-        }
-
-        .container {
-            margin: 30px auto;
-            width: 80%;
-        }
-
-        .about-child {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-            animation: slideIn 1.5s ease-out;
-        }
-
-        .about-child h2 {
-            font-size: 2.5em;
-            color: #f39c12;
-            margin-bottom: 20px;
-        }
-
-        .about-child p {
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #2c3e50;
-        }
-
-        .highlight {
-            color: #ff6f61;
-            font-weight: bold;
-            background-color: #ffeb3b;
-            padding: 2px 4px;
-        }
-
-        .dream-section {
-            background-color: #ecf0f1;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
-
-        .dream-section h2 {
-            font-size: 2.5em;
-            color: #3498db;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-
-        .dream-section p {
-            font-size: 1.2em;
-            color: #2c3e50;
-        }
-
-        /* Image styling and animation */
-        .photo img {
-            border-radius: 50%;
-            border: 5px solid #3498db;
-            animation: rotatePhoto 10s infinite;
-        }
-
-        /* Animations */
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes rotatePhoto {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Ankit Kumar's World!</h1>
+    <!-- Hero -->
+    <header class="hero">
+        <h1 class="neon">Ankit's Amazing Lab</h1>
+        <p class="subtitle">I am <span id="typed" class="typed"></span></p>
+    </header>
 
-    <div class="container">
-        <!-- About Ankit -->
-        <div class="about-child">
-            <h2>About Ankit</h2>
-            <p>Meet <span class="highlight">Ankit Kumar</span>, a 6th-grade student who dreams of becoming a <strong>scientist</strong> and making groundbreaking contributions to India. He lives with his father <span class="highlight">Rajiv Thakur</span>, mother <span class="highlight">Sanju Devi</span>, and sister <span class="highlight">Aashu Kumari</span>. Ankit is extremely passionate about <strong>math and science</strong>, excelling in both subjects. He enjoys <strong>inventing</strong> new things by using old items creatively. His love for innovation keeps him exploring new ideas every day.</p>
-        </div>
+    <!-- Floating decorative bubbles -->
+    <div class="bubbles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+    </div>
 
-        <!-- Hobbies Section -->
-        <div class="about-child">
-            <h2>Ankit's Hobbies</h2>
-            <p>Ankit is an energetic kid who loves spending time outdoors. His favorite games include <span class="highlight">Kancha</span>, <span class="highlight">Guli Danda</span>, and other traditional outdoor games. He also enjoys watching cartoons in his free time, which inspire him to think creatively. His Instagram profile often reflects his love for science and invention.</p>
-        </div>
+    <main class="container">
+        <!-- Profile Card (college student persona) -->
+        <section class="profile-card card about-child" id="profileCard">
+            <div class="photo" role="button" tabindex="0" aria-label="Open profile photo">
+                <img src="ankit.png" alt="Ankit Kumar" width="260" height="260" id="avatar" loading="lazy">
+            </div>
+            <h2>Ankit Kumar</h2>
+            <p class="tagline">7th grader · Curious about <strong>science</strong>, <strong>math</strong> &amp; <strong>sports</strong></p>
+           
+            <div class="actions">
+                <button id="follow-btn" class="cta">Set Study Goal</button>
+                <button id="view-projects" class="cta secondary">See Projects</button>
+            </div>
+        </section>
 
-        <!-- Dream Section -->
-        <div class="dream-section">
-            <h2>Ankit's Dream</h2>
-            <p>Ankit has big dreams! He wants to become a <strong>scientist</strong> to help the world with amazing discoveries. One day, he hopes to open a business that will become <strong>the most important company in India</strong>, helping solve the country’s challenges through research and technology. His ambition is to bring positive change to society.</p>
-        </div>
+        <!-- Portfolio & Achievements (motivational) -->
+        <section class="card portfolio-panel">
+            <h3><i class="fas fa-award"></i> Portfolio & Achievements</h3>
+            <p class="bio"><strong>About:</strong> Projects, experiments and learning milestones — small wins that lead to big change.</p>
+            <div class="portfolio-stats">
+                <div><strong id="p-sports">45</strong><span>Matches Played</span></div>
+                <div><strong id="p-math">120</strong><span>Math Problems Solved</span></div>
+                <div><strong id="p-streak">0</strong><span>Study Streak (days)</span></div>
+            </div>
+            <!-- XP progress bar -->
+            <div class="xp-container" aria-hidden="false">
+                <div class="xp-header"><strong id="xp-level">Level 1</strong><span id="xp-points">0 XP</span></div>
+                <div class="xp-bar-wrap"><div id="xp-bar" class="xp-bar"></div></div>
+            </div>
+            
+            <div class="portfolio-actions">
+                <button id="play-game-btn" class="cta">Play Math Sprint</button>
+                <button id="log-match-btn" class="cta secondary">Log Match Played</button>
+            </div>
+        </section>
 
-        <!-- Image Section with Animation -->
-        <div class="photo">
-            <img src="ankit.png" alt="Ankit Kumar's Photo" width="200" height="200">
-        </div>
+        <!-- Roles and field animations -->
+        <section class="card roles-panel" id="rolesPanel">
+            <h3>Fields &amp; Interests</h3>
+            <div class="roles-grid">
+                <div class="role" data-role="science">
+                    <div class="role-visual" id="role-science" aria-hidden="true"></div>
+                    <h4>Scientist</h4>
+                    <p>Experiments, labs and discoveries.</p>
+                </div>
+                <div class="role" data-role="engineer">
+                    <div class="role-visual" id="role-engineer" aria-hidden="true"></div>
+                    <h4>Engineer</h4>
+                    <p>Building devices and prototypes.</p>
+                </div>
+                <div class="role" data-role="doctor">
+                    <div class="role-visual" id="role-doctor" aria-hidden="true"></div>
+                    <h4>Doctor</h4>
+                    <p>Health tech and biomedical ideas.</p>
+                </div>
+                <div class="role" data-role="computer">
+                    <div class="role-visual" id="role-computer" aria-hidden="true"></div>
+                    <h4>Computer</h4>
+                    <p>Coding, AI and data science.</p>
+                </div>
+            </div>
+        </section>
 
-        <!-- Family Details -->
-        <div class="about-child">
-            <h2>Family</h2>
-            <p>Ankit comes from a loving family. His father <span class="highlight">Rajiv Thakur</span> and mother <span class="highlight">Bhonny Devi</span> have always encouraged him to follow his dreams. His sister, <span class="highlight">Aashu Kumari</span>, is his closest companion. Together, they form a strong support system for his aspirations.</p>
+        <!-- Worlds row: Science, Tech, Health, Play, Dream -->
+        <section class="card" aria-label="Worlds">
+            <h3>Worlds &amp; Adventures</h3>
+            <div class="worlds" id="worldsRow">
+                <div class="world-card" data-world="science">
+                    <div class="icon">🧪</div>
+                    <h4>Science World</h4>
+                    <p>Experiments, bubbling beakers &amp; lab quests.</p>
+                </div>
+                <div class="world-card" data-world="tech">
+                    <div class="icon">💻</div>
+                    <h4>Tech World</h4>
+                    <p>Code, AI and data puzzles.</p>
+                </div>
+                <div class="world-card" data-world="health">
+                    <div class="icon">❤️</div>
+                    <h4>Health World</h4>
+                    <p>Body map quizzes &amp; health challenges.</p>
+                </div>
+                <div class="world-card" data-world="play">
+                    <div class="icon">⚽</div>
+                    <h4>Play World</h4>
+                    <p>Mini-games, sports &amp; hobbies.</p>
+                </div>
+                <div class="world-card" data-world="dream">
+                    <div class="icon">🚀</div>
+                    <h4>Dream World</h4>
+                    <p>Rocket launches, goals &amp; badges.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick cards for About / Hobbies / Dream / Family -->
+        <section class="grid">
+            <article class="card about-child">
+                <h3><i class="fas fa-user-graduate"></i> About</h3>
+                <p>Meet <span class="highlight">Ankit</span>, a curious 6th grader who loves science, math and inventing fun gadgets from everyday items.</p>
+            </article>
+
+            <article class="card about-child">
+                <h3><i class="fas fa-football-ball"></i> Hobbies</h3>
+                <p>Plays <span class="highlight">Kancha</span> and <span class="highlight">Guli Danda</span>, loves outdoor games and watching cartoons that spark creativity.</p>
+            </article>
+
+            <article class="card dream-section">
+                <h3><i class="fas fa-rocket"></i> Dream</h3>
+                <p>Aims to become a scientist and start a company that solves big problems for India.</p>
+            </article>
+
+            <article class="card about-child">
+                <h3><i class="fas fa-users"></i> Family</h3>
+                <p>Supported by his parents and sister, Ankit explores ideas and builds small inventions every day.</p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Lightbox for larger photo view -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox-content" role="dialog" aria-modal="true">
+            <button id="lightbox-close" class="lightbox-close" aria-label="Close">✕</button>
+            <img src="ankit.png" alt="Ankit larger photo" id="lightbox-img">
+            <figcaption>Ankit Kumar — curious student and maker</figcaption>
         </div>
     </div>
 
-    <!-- Add JavaScript Animation for AI Style -->
-    <script>
-        // Neural Network-like Animation for AI
-        const canvas = document.createElement('canvas');
-        document.body.appendChild(canvas);
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+    <!-- Study Goal Modal -->
+    <div id="studyModal" class="study-modal" aria-hidden="true">
+        <div class="study-modal-content" role="dialog" aria-modal="true">
+            <button id="study-close" class="study-close" aria-label="Close">✕</button>
+            <h3>Set a Study Goal</h3>
+            <label for="study-goal">Goal (short):</label>
+            <input id="study-goal" type="text" placeholder="e.g. Finish math chapter 3" maxlength="80">
+            <label for="study-mins">Duration (minutes):</label>
+            <input id="study-mins" type="number" min="5" max="180" value="25">
+            <!-- Mini-game to unlock study -->
+            <div id="mini-game" class="mini-game">
+                <p>Solve this quick math to start your study session!</p>
+                <div id="math-question" class="math-question"></div>
+                <input id="math-answer" type="number" placeholder="Your answer">
+                <button id="check-math" class="cta">Check Answer</button>
+                <div id="math-feedback" class="math-feedback"></div>
+            </div>
+            <!-- Drawing canvas for fun -->
+            <div class="drawing-section">
+                <p>Doodle some math symbols while thinking!</p>
+                <canvas id="drawing-canvas" class="drawing-canvas"></canvas>
+                <button id="clear-canvas" class="cta secondary">Clear</button>
+            </div>
+            <div class="study-actions">
+                <button id="start-study" class="cta" disabled>Start Study</button>
+                <button id="cancel-study" class="cta secondary">Cancel</button>
+            </div>
+            <div id="study-timer" class="study-timer" aria-hidden="true">
+                <div class="timer-display">00:00</div>
+                <div class="timer-progress"><div class="timer-bar"></div></div>
+                <div class="timer-controls">
+                    <button id="pause-study" class="cta secondary">Pause</button>
+                    <button id="stop-study" class="cta secondary">Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        let particlesArray = [];
-        const numberOfParticles = 50;
-
-        // Particle Class
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = 3;
-                this.speedX = Math.random() * 2 - 1;
-                this.speedY = Math.random() * 2 - 1;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                // Bounce from edges
-                if (this.x < 0 || this.x > canvas.width) {
-                    this.speedX *= -1;
-                }
-                if (this.y < 0 || this.y > canvas.height) {
-                    this.speedY *= -1;
-                }
-            }
-            draw() {
-                ctx.fillStyle = '#3498db';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        // Initialize Particles
-        function init() {
-            for (let i = 0; i < numberOfParticles; i++) {
-                particlesArray.push(new Particle());
-            }
-        }
-
-        // Animate Particles
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
-            connect();
-            requestAnimationFrame(animate);
-        }
-
-        // Connect Particles with Lines
-        function connect() {
-            let opacityValue = 1;
-            for (let a = 0; a < particlesArray.length; a++) {
-                for (let b = a; b < particlesArray.length; b++) {
-                    let dx = particlesArray[a].x - particlesArray[b].x;
-                    let dy = particlesArray[a].y - particlesArray[b].y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 150) {
-                        opacityValue = 1 - (distance / 150);
-                        ctx.strokeStyle = 'rgba(52, 152, 219,' + opacityValue + ')';
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        init();
-        animate();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
